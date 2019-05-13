@@ -4,10 +4,10 @@ import com.rbkmoney.adapter.bank.spring.boot.starter.model.EntryStateModel;
 import com.rbkmoney.adapter.bank.spring.boot.starter.model.ExitStateModel;
 import com.rbkmoney.adapter.bank.spring.boot.starter.model.Step;
 
-public interface StepResolver {
+public interface StepResolver<T extends EntryStateModel, R extends ExitStateModel>  {
 
-    Step resolveEntry(EntryStateModel stateModel);
+    Step resolveEntry(T stateModel);
 
-    Step resolveExit(ExitStateModel stateModel);
+    Step resolveExit(R stateModel);
 
 }

@@ -1,6 +1,7 @@
 package com.rbkmoney.adapter.bank.spring.boot.starter.handler;
 
 import com.rbkmoney.adapter.bank.spring.boot.starter.model.EntryStateModel;
+import com.rbkmoney.adapter.bank.spring.boot.starter.model.ExitStateModel;
 import com.rbkmoney.adapter.bank.spring.boot.starter.processor.Processor;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -11,11 +12,11 @@ import java.util.function.Function;
 
 @Slf4j
 @RequiredArgsConstructor
-public abstract class CommonHandlerImpl<T, P, R, E extends EntryStateModel> implements CommonHandler<T, R, E> {
+public abstract class CommonHandlerImpl<T extends ExitStateModel, P, R, E extends EntryStateModel> implements CommonHandler<T, R, E> {
 
     private final Function<P, R> requestFunction;
     private final Converter<E, P> converter;
-    private final Processor<T, R> processor;
+    private final Processor<T, E, R> processor;
 
     @Override
     public T handle(E entryStateModel) {

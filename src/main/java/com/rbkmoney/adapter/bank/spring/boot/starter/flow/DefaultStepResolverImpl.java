@@ -7,7 +7,7 @@ import com.rbkmoney.adapter.bank.spring.boot.starter.model.Step;
 import org.springframework.stereotype.Component;
 
 @Component
-public class DefaultStepResolverImpl implements StepResolver {
+public class DefaultStepResolverImpl implements StepResolver<EntryStateModel, ExitStateModel> {
 
     @Override
     public Step resolveEntry(EntryStateModel stateModel) {
