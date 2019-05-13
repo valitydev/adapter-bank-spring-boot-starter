@@ -1,0 +1,4 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.rbkmoney.adapter.bank.spring.boot.starter.config.ErrorMappingConfiguration,\
+com.rbkmoney.adapter.bank.spring.boot.starter.config.properties.TimerProperties,\
+com.rbkmoney.adapter.bank.spring.boot.starter.flow.DefaultStepResolverImpl
