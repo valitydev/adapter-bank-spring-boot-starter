@@ -24,8 +24,4 @@ public abstract class CommonHandlerImpl<T, P, R, E extends EntryStateModel> impl
         return processor.process(response, entryStateModel);
     }
 
-    @Override
-    public Processor<T, R> getProcessor() {
-        return processor;
-    }
 }

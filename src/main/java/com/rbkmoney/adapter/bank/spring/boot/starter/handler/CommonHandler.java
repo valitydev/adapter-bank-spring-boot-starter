@@ -1,7 +1,6 @@
 package com.rbkmoney.adapter.bank.spring.boot.starter.handler;
 
 import com.rbkmoney.adapter.bank.spring.boot.starter.model.EntryStateModel;
-import com.rbkmoney.adapter.bank.spring.boot.starter.processor.Processor;
 import org.apache.thrift.TException;
 
 public interface CommonHandler<T, R, E extends EntryStateModel> {
@@ -10,5 +9,4 @@ public interface CommonHandler<T, R, E extends EntryStateModel> {
 
     T handle(E context) throws TException;
 
-    Processor<T, R> getProcessor();
 }
