@@ -6,6 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.ToString;
 
+import java.math.BigDecimal;
 import java.util.Map;
 
 @Data
@@ -13,16 +14,15 @@ import java.util.Map;
 @ToString(exclude = {"pan", "cvv2", "expDate"})
 public class EntryStateModel {
 
-    private String merchantUid;
-    private String merchantSite;
     private String pan;
     private ExpDate expDate;
     private String cvv2;
-    private String amount;
+    private Long amount;
     private Short currency;
-    private String modifiers;
+    private String currencyName;
     private String cardName;
-    private String orderId;
+
+    private String modifiers;
     private String ip;
     private String email;
     private String country;
@@ -31,9 +31,14 @@ public class EntryStateModel {
     private String address;
     private String phone;
     private String callbackUrl;
+
+    private String orderId;
     private String trxId;
+    private String lastOpId;
+
     private String key;
     private String refundId;
+    private String descriptions;
     private String recToken;
     private TargetStatus targetStatus;
     private boolean makeRecurrent;

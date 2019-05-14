@@ -19,5 +19,6 @@ public class ExitStateModel {
     private String md;
     private String acsUrl;
     private String trxId;
+    private String lastOpId;
 
 }

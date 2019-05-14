@@ -21,6 +21,7 @@ public class AdapterContext {
     private Instant maxDateTimePolling;
     private Step nextStep;
     private String pares;
+    private String md;
     @JsonProperty(value = "trx_id")
     private String trxId;
 
