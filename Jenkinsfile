@@ -8,6 +8,6 @@ build('adapter-bank-spring-boot-starter', 'docker-host') {
         javaLibPipeline = load("build_utils/jenkins_lib/pipeJavaLib.groovy")
     }
 
-    def buildImageTag = "269686d735abef363f9f40a1bf4e1b7c751f3722"
+    def buildImageTag = "bc95d0d6dc13c693acd2b274531a7d604b877bf3"
     javaLibPipeline(buildImageTag)
 }
