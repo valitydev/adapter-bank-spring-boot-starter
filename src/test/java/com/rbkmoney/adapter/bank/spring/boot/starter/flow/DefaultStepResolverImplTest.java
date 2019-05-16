@@ -9,7 +9,7 @@ import org.junit.Test;
 
 public class DefaultStepResolverImplTest {
 
-    DefaultStepResolverImpl defaultStepResolver = new DefaultStepResolverImpl();
+    private DefaultStepResolverImpl defaultStepResolver = new DefaultStepResolverImpl();
 
     @Test
     public void resolveEntry() {
@@ -68,4 +68,5 @@ public class DefaultStepResolverImplTest {
         step = defaultStepResolver.resolveExit(exitStateModel);
         Assert.assertEquals(Step.GENERATE_TOKEN_FINISH, step);
     }
+
 }

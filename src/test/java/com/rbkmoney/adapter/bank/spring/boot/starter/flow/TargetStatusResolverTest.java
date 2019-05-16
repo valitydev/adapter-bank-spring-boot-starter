@@ -8,7 +8,7 @@ import org.junit.Test;
 
 public class TargetStatusResolverTest {
 
-    TargetStatusResolver targetStatusResolver = new TargetStatusResolver();
+    private TargetStatusResolver targetStatusResolver = new TargetStatusResolver();
 
     @Test
     public void resolve() {
@@ -29,4 +29,5 @@ public class TargetStatusResolverTest {
     public void resolveException() {
         TargetStatus resolve = targetStatusResolver.resolve(null);
     }
+
 }

@@ -23,7 +23,7 @@ public class DefaultStepResolverImpl implements StepResolver<EntryStateModel, Ex
             case AUTH_RECURRENT:
                 return resolveAuthRecurrent(stateModel);
             default:
-                return null;
+                throw new IllegalStateException("Unknown status of entryState");
         }
     }
 

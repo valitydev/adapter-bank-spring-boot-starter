@@ -9,7 +9,7 @@ import org.junit.Test;
 
 public class SessionDataUtilsTest {
 
-    public static final String CARD_SECURITY_CODE = "adfdfs";
+    private static final String CARD_SECURITY_CODE = "adfdfs";
 
     @Test
     public void getCvv2() {
@@ -36,4 +36,5 @@ public class SessionDataUtilsTest {
 
         Assert.assertEquals(CARD_SECURITY_CODE, cvv2);
     }
+
 }
