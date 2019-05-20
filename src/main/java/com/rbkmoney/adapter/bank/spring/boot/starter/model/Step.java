@@ -12,6 +12,6 @@ public enum Step {
     GENERATE_TOKEN_REFUND,
     GENERATE_TOKEN_FINISH,
     CAPTURE,
-    REFUND;
+    REFUND
 
 }

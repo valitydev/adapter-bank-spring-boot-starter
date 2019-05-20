@@ -5,7 +5,7 @@ import org.apache.thrift.TException;
 
 public interface CommonHandler<T, R, E extends EntryStateModel> {
 
-    boolean isHandle(final E entryStateModel);
+    boolean isHandler(final E entryStateModel);
 
     T handle(E context) throws TException;
 
