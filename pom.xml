@@ -15,6 +15,7 @@
         <spring-boot.version>2.1.0.RELEASE</spring-boot.version>
         <damsel-utils.version>2.1.9</damsel-utils.version>
         <damsel.version>1.256-2afe121</damsel.version>
+        <serializer.version>0.6.7</serializer.version>
     </properties>
 
     <dependencies>
@@ -83,6 +84,11 @@
             <groupId>com.rbkmoney</groupId>
             <artifactId>damsel-utils</artifactId>
             <version>${damsel-utils.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.rbkmoney.geck</groupId>
+            <artifactId>serializer</artifactId>
+            <version>${serializer.version}</version>
         </dependency>
 
         <!-- test -->
