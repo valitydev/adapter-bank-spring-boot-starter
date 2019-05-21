@@ -20,7 +20,8 @@ public class AdapterContext {
     @JsonProperty(value = "max_date_time_polling")
     private Instant maxDateTimePolling;
     private Step nextStep;
-    private String pares;
+    @JsonProperty(value = "pares")
+    private String paRes;
     private String md;
     @JsonProperty(value = "trx_id")
     private String trxId;

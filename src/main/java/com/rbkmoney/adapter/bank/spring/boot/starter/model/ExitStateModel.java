@@ -16,7 +16,7 @@ public class ExitStateModel {
     private String errorMessage;
     private AdapterContext adapterContext;
     private EntryStateModel entryStateModel;
-    private String pareq;
+    private String paReq;
     private String refundId;
     private String md;
     private String acsUrl;
