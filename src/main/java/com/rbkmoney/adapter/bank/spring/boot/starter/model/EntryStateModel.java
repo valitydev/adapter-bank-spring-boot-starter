@@ -11,40 +11,34 @@ import java.util.Map;
 
 @Data
 @Builder
-@ToString(exclude = {"pan", "cvv2", "expDate"})
+@ToString(exclude = {"pan", "cvv2", "expMonth", "expYear", "cardHolderName"})
 public class EntryStateModel {
 
     private String pan;
-    private ExpDate expDate;
+    private Byte expMonth;
+    private Short expYear;
     private String cvv2;
+    private String cardHolderName;
     private Long amount;
     private Short currency;
-    private String currencyName;
-    private String cardName;
+    private String currencyCode;
 
-    private String modifiers;
     private String ip;
     private String email;
-    private String country;
-    private String city;
-    private String region;
-    private String address;
     private String phone;
-    private String callbackUrl;
 
-    private String orderId;
     private String trxId;
-    private String lastOpId;
+    private Map<String, String> trxExtra;
 
-    private String key;
     private String refundId;
-    private String descriptions;
-    private String recToken;
+    private Long refundAmount;
+    private String invoiceDetails;
+    private RecurrentContext recurrentContext;
     private TargetStatus targetStatus;
     private boolean makeRecurrent;
     private AdapterContext adapterContext;
 
-    private Map<String, String> parameters;
+    private Map<String, String> options;
 
     private Step step;
 }
