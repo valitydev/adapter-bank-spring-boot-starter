@@ -32,7 +32,7 @@ public class DefaultStepResolverImpl implements StepResolver<EntryStateModel, Ex
             return Step.FINISH_THREE_DS;
         } else if (stateModel.isMakeRecurrent()) {
             return Step.AUTH_RECURRENT;
-        } else if (stateModel.getRecToken() != null) {
+        } else if (stateModel.getRecurrentContext() != null && stateModel.getRecurrentContext().getRecToken() != null) {
             return Step.RECURRENT;
         }
         return Step.AUTH;
