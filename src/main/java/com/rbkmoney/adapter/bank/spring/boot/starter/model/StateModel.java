@@ -11,6 +11,7 @@ public class StateModel {
     private String recToken;
     private TargetStatus targetStatus;
     private boolean makeRecurrent;
+    private RecurrentContext recurrentContext;
     private AdapterContext adapterContext;
 
     private Step step;

@@ -5,6 +5,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Map;
+
 @Data
 @Builder
 @NoArgsConstructor
@@ -17,10 +19,9 @@ public class ExitStateModel {
     private AdapterContext adapterContext;
     private EntryStateModel entryStateModel;
     private String paReq;
-    private String refundId;
     private String md;
     private String acsUrl;
     private String trxId;
-    private String lastOpId;
+    private Map<String, String> trxExtra;
 
 }

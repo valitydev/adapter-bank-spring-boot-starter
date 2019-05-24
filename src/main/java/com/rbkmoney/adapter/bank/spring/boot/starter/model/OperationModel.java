@@ -14,29 +14,27 @@ public class OperationModel {
     @ToString.Exclude
     private String pan;
     @ToString.Exclude
-    private ExpDate expDate;
+    private Byte expMonth;
+    @ToString.Exclude
+    private Short expYear;
     @ToString.Exclude
     private String cvv2;
-    private String cardName;
+    @ToString.Exclude
+    private String cardHolder;
 
     private Long amount;
-    private Short currency;
-    private String currencyName;
+    private Short currencyCode;
+    private String currencySymbolCode;
 
-    private String modifiers;
     private String ip;
     private String email;
-    private String country;
-    private String city;
-    private String region;
-    private String address;
     private String phone;
 
-    private String key;
+    private Long refundAmount;
     private String refundId;
-    private String descriptions;
+    private String invoiceDetails;
     private String callbackUrl;
 
-    private Map<String, String> parameters;
+    private Map<String, String> options;
 
 }

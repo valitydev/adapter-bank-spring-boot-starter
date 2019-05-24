@@ -15,7 +15,6 @@ import lombok.ToString;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class RecurrentContext {
 
-    @JsonProperty(value = "trx_id")
-    private String trxId;
+    private String recToken;
 
 }

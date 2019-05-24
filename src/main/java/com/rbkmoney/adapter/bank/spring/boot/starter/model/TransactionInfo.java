@@ -9,8 +9,7 @@ import java.util.Map;
 @Builder
 public class TransactionInfo {
 
-    private String orderId;
     private String trxId;
-    private Map<String, String> operationHistory;
+    private Map<String, String> trxExtra;
 
 }
