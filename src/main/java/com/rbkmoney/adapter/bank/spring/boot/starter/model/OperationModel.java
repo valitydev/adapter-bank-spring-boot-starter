@@ -1,6 +1,7 @@
 package com.rbkmoney.adapter.bank.spring.boot.starter.model;
 
 import com.rbkmoney.damsel.cds.ExpDate;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.ToString;
@@ -9,6 +10,7 @@ import java.util.Map;
 
 @Data
 @Builder
+@AllArgsConstructor
 public class OperationModel {
 
     @ToString.Exclude
