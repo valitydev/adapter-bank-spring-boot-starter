@@ -1,16 +1,13 @@
 package com.rbkmoney.adapter.bank.spring.boot.starter.flow;
 
-import com.rbkmoney.adapter.bank.spring.boot.starter.model.AdapterContext;
-import com.rbkmoney.adapter.bank.spring.boot.starter.model.EntryStateModel;
-import com.rbkmoney.adapter.bank.spring.boot.starter.model.ExitStateModel;
-import com.rbkmoney.adapter.bank.spring.boot.starter.model.Step;
+import com.rbkmoney.adapter.bank.spring.boot.starter.model.*;
 import org.springframework.stereotype.Component;
 
 @Component
-public class DefaultStepResolverImpl implements StepResolver<EntryStateModel, ExitStateModel> {
+public class DefaultStepResolverImpl implements StepResolver<StateModel, ExitStateModel> {
 
     @Override
-    public Step resolveEntry(EntryStateModel stateModel) {
+    public Step resolveEntry(StateModel stateModel) {
         switch (stateModel.getTargetStatus()) {
             case PROCESSED:
                 return resolveProcessedSteps(stateModel);
@@ -27,7 +24,7 @@ public class DefaultStepResolverImpl implements StepResolver<EntryStateModel, Ex
         }
     }
 
-    private Step resolveProcessedSteps(EntryStateModel stateModel) {
+    private Step resolveProcessedSteps(StateModel stateModel) {
         if (isNextThreeDs(stateModel)) {
             return Step.FINISH_THREE_DS;
         } else if (stateModel.isMakeRecurrent()) {
@@ -38,7 +35,7 @@ public class DefaultStepResolverImpl implements StepResolver<EntryStateModel, Ex
         return Step.AUTH;
     }
 
-    private Step resolveAuthRecurrent(EntryStateModel stateModel) {
+    private Step resolveAuthRecurrent(StateModel stateModel) {
         AdapterContext adapterContext = stateModel.getAdapterContext();
         if (adapterContext != null
                 && (Step.GENERATE_TOKEN_FINISH_THREE_DS.equals(adapterContext.getNextStep())
@@ -49,7 +46,7 @@ public class DefaultStepResolverImpl implements StepResolver<EntryStateModel, Ex
         return Step.AUTH_RECURRENT;
     }
 
-    private static boolean isNextThreeDs(EntryStateModel stateModel) {
+    private static boolean isNextThreeDs(StateModel stateModel) {
         return stateModel.getAdapterContext() != null && stateModel.getAdapterContext().getNextStep() != null
                 && (Step.FINISH_THREE_DS.equals(stateModel.getAdapterContext().getNextStep())
                 || Step.GENERATE_TOKEN_FINISH_THREE_DS.equals(stateModel.getAdapterContext().getNextStep()));
@@ -58,7 +55,7 @@ public class DefaultStepResolverImpl implements StepResolver<EntryStateModel, Ex
     @Override
     public Step resolveExit(ExitStateModel stateModel) {
         EntryStateModel entryStateModel = stateModel.getEntryStateModel();
-        Step step = entryStateModel.getStep();
+        Step step = entryStateModel.getStateModel().getStep();
         switch (step) {
             case AUTH_RECURRENT:
                 if (Step.FINISH_THREE_DS.equals(stateModel.getNextStep())) {

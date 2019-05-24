@@ -3,6 +3,7 @@ package com.rbkmoney.adapter.bank.spring.boot.starter.flow;
 import com.rbkmoney.adapter.bank.spring.boot.starter.constants.TargetStatus;
 import com.rbkmoney.adapter.bank.spring.boot.starter.model.EntryStateModel;
 import com.rbkmoney.adapter.bank.spring.boot.starter.model.ExitStateModel;
+import com.rbkmoney.adapter.bank.spring.boot.starter.model.StateModel;
 import com.rbkmoney.adapter.bank.spring.boot.starter.model.Step;
 import org.junit.Assert;
 import org.junit.Test;
@@ -13,33 +14,35 @@ public class DefaultStepResolverImplTest {
 
     @Test
     public void resolveEntry() {
-        EntryStateModel entryStateModel = EntryStateModel.builder().
-                targetStatus(TargetStatus.CANCELLED)
+        StateModel stateModel = StateModel.builder()
+                .targetStatus(TargetStatus.CANCELLED)
                 .build();
-        Step step = defaultStepResolver.resolveEntry(entryStateModel);
+        Step step = defaultStepResolver.resolveEntry(stateModel);
         Assert.assertEquals(Step.CANCEL, step);
 
-        entryStateModel.setTargetStatus(TargetStatus.CAPTURED);
-        step = defaultStepResolver.resolveEntry(entryStateModel);
+        stateModel.setTargetStatus(TargetStatus.CAPTURED);
+        step = defaultStepResolver.resolveEntry(stateModel);
         Assert.assertEquals(Step.CAPTURE, step);
 
-        entryStateModel.setTargetStatus(TargetStatus.PROCESSED);
-        step = defaultStepResolver.resolveEntry(entryStateModel);
+        stateModel.setTargetStatus(TargetStatus.PROCESSED);
+        step = defaultStepResolver.resolveEntry(stateModel);
         Assert.assertEquals(Step.AUTH, step);
 
-        entryStateModel.setTargetStatus(TargetStatus.AUTH_RECURRENT);
-        step = defaultStepResolver.resolveEntry(entryStateModel);
+        stateModel.setTargetStatus(TargetStatus.AUTH_RECURRENT);
+        step = defaultStepResolver.resolveEntry(stateModel);
         Assert.assertEquals(Step.AUTH_RECURRENT, step);
 
-        entryStateModel.setTargetStatus(TargetStatus.REFUNDED);
-        step = defaultStepResolver.resolveEntry(entryStateModel);
+        stateModel.setTargetStatus(TargetStatus.REFUNDED);
+        step = defaultStepResolver.resolveEntry(stateModel);
         Assert.assertEquals(Step.REFUND, step);
     }
 
     @Test
     public void resolveExit() {
         EntryStateModel entryStateModel = EntryStateModel.builder()
-                .step(Step.AUTH)
+                .stateModel(StateModel.builder()
+                        .step(Step.AUTH)
+                        .build())
                 .build();
         ExitStateModel exitStateModel = ExitStateModel.builder()
                 .entryStateModel(entryStateModel)
@@ -48,7 +51,8 @@ public class DefaultStepResolverImplTest {
         Step step = defaultStepResolver.resolveExit(exitStateModel);
         Assert.assertEquals(Step.FINISH_THREE_DS, step);
 
-        entryStateModel.setStep(Step.AUTH_RECURRENT);
+        entryStateModel.setStateModel(StateModel.builder()
+                .step(Step.AUTH_RECURRENT).build());
         step = defaultStepResolver.resolveExit(exitStateModel);
         Assert.assertEquals(Step.GENERATE_TOKEN_FINISH_THREE_DS, step);
 
@@ -56,15 +60,18 @@ public class DefaultStepResolverImplTest {
         step = defaultStepResolver.resolveExit(exitStateModel);
         Assert.assertEquals(Step.GENERATE_TOKEN_CAPTURE, step);
 
-        entryStateModel.setStep(Step.GENERATE_TOKEN_FINISH_THREE_DS);
+        entryStateModel.setStateModel(StateModel.builder()
+                .step(Step.GENERATE_TOKEN_FINISH_THREE_DS).build());
         step = defaultStepResolver.resolveExit(exitStateModel);
         Assert.assertEquals(Step.GENERATE_TOKEN_CAPTURE, step);
 
-        entryStateModel.setStep(Step.GENERATE_TOKEN_CAPTURE);
+        entryStateModel.setStateModel(StateModel.builder()
+                .step(Step.GENERATE_TOKEN_CAPTURE).build());
         step = defaultStepResolver.resolveExit(exitStateModel);
         Assert.assertEquals(Step.GENERATE_TOKEN_REFUND, step);
 
-        entryStateModel.setStep(Step.GENERATE_TOKEN_REFUND);
+        entryStateModel.setStateModel(StateModel.builder()
+                .step(Step.GENERATE_TOKEN_REFUND).build());
         step = defaultStepResolver.resolveExit(exitStateModel);
         Assert.assertEquals(Step.GENERATE_TOKEN_FINISH, step);
     }
