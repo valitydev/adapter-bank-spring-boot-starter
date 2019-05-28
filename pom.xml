@@ -16,6 +16,7 @@
         <damsel-utils.version>2.1.9</damsel-utils.version>
         <damsel.version>1.256-2afe121</damsel.version>
         <serializer.version>0.6.7</serializer.version>
+        <hellgate-adapter-client.version>2.1.9</hellgate-adapter-client.version>
     </properties>
 
     <dependencies>
@@ -92,6 +93,12 @@
             <groupId>com.rbkmoney.geck</groupId>
             <artifactId>serializer</artifactId>
             <version>${serializer.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.rbkmoney.proxy-libs</groupId>
+            <artifactId>hellgate-adapter-client</artifactId>
+            <version>${hellgate-adapter-client.version}</version>
         </dependency>
 
         <!-- test -->

@@ -1,6 +1,5 @@
 package com.rbkmoney.adapter.bank.spring.boot.starter.model;
 
-import com.rbkmoney.damsel.cds.ExpDate;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -24,9 +23,13 @@ public class OperationModel {
     @ToString.Exclude
     private String cardHolder;
 
+    private String cryptogram;
+    private String eci;
+
     private Long amount;
     private Short currencyCode;
     private String currencySymbolCode;
+    private String createdAt;
 
     private String ip;
     private String email;
