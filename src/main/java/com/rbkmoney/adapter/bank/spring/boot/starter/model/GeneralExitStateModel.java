@@ -1,5 +1,7 @@
 package com.rbkmoney.adapter.bank.spring.boot.starter.model;
 
+import com.rbkmoney.adapter.common.enums.Step;
+import com.rbkmoney.adapter.common.model.AdapterContext;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -11,17 +13,14 @@ import java.util.Map;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class ExitStateModel {
+public class GeneralExitStateModel {
 
     private Step nextStep;
     private String errorCode;
     private String errorMessage;
     private AdapterContext adapterContext;
-    private EntryStateModel entryStateModel;
-    private String paReq;
-    private String md;
-    private String acsUrl;
-    private String trxId;
+    private GeneralEntryStateModel generalEntryStateModel;
+
     private Map<String, String> trxExtra;
 
 }
