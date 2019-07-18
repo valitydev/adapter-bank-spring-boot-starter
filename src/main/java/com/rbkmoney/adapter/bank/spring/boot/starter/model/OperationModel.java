@@ -1,15 +1,13 @@
 package com.rbkmoney.adapter.bank.spring.boot.starter.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.ToString;
+import lombok.*;
 
 import java.util.Map;
 
 @Data
 @Builder
 @AllArgsConstructor
+@NoArgsConstructor
 public class OperationModel {
 
     @ToString.Exclude
@@ -23,9 +21,7 @@ public class OperationModel {
     @ToString.Exclude
     private String cardHolder;
 
-    private String cryptogram;
-    private String eci;
-
+    private String orderId;
     private Long amount;
     private Short currencyCode;
     private String currencySymbolCode;
