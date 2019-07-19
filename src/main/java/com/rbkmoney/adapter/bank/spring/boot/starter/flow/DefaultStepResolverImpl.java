@@ -33,9 +33,9 @@ public class DefaultStepResolverImpl implements StepResolver<GeneralEntryStateMo
     }
 
     private static boolean isNextThreeDs(GeneralEntryStateModel stateModel) {
-        return stateModel.getAdapterContext() != null && stateModel.getAdapterContext().getStep() != null
-                && (Step.FINISH_THREE_DS.equals(stateModel.getAdapterContext().getStep())
-                || Step.GENERATE_TOKEN_FINISH_THREE_DS.equals(stateModel.getAdapterContext().getStep()));
+        Step step = stateModel.getAdapterContext().getStep();
+        return stateModel.getAdapterContext() != null
+                && (Step.FINISH_THREE_DS.equals(step) || Step.GENERATE_TOKEN_FINISH_THREE_DS.equals(step));
     }
 
     @Override
