@@ -3,10 +3,10 @@ package com.rbkmoney.adapter.bank.spring.boot.starter.flow;
 import com.rbkmoney.adapter.bank.spring.boot.starter.model.*;
 import com.rbkmoney.adapter.common.enums.Step;
 
-public class DefaultStepResolverImpl implements StepResolver<StateModel> {
+public class DefaultStepResolverImpl implements StepResolver<GeneralEntryStateModel, GeneralExitStateModel> {
 
     @Override
-    public Step resolveEntry(StateModel stateModel) {
+    public Step resolveEntry(GeneralEntryStateModel stateModel) {
         switch (stateModel.getTargetStatus()) {
             case PROCESSED:
                 return resolveProcessedSteps(stateModel);
@@ -21,7 +21,7 @@ public class DefaultStepResolverImpl implements StepResolver<StateModel> {
         }
     }
 
-    private Step resolveProcessedSteps(StateModel stateModel) {
+    private Step resolveProcessedSteps(GeneralEntryStateModel stateModel) {
         if (isNextThreeDs(stateModel)) {
             return Step.FINISH_THREE_DS;
         } else if (stateModel.isMakeRecurrent()) {
@@ -32,19 +32,19 @@ public class DefaultStepResolverImpl implements StepResolver<StateModel> {
         return Step.AUTH;
     }
 
-    private static boolean isNextThreeDs(StateModel stateModel) {
-        return stateModel.getAdapterContext() != null && stateModel.getAdapterContext().getNextStep() != null
-                && (Step.FINISH_THREE_DS.equals(stateModel.getAdapterContext().getNextStep())
-                || Step.GENERATE_TOKEN_FINISH_THREE_DS.equals(stateModel.getAdapterContext().getNextStep()));
+    private static boolean isNextThreeDs(GeneralEntryStateModel stateModel) {
+        Step step = stateModel.getAdapterContext().getStep();
+        return stateModel.getAdapterContext() != null
+                && (Step.FINISH_THREE_DS.equals(step) || Step.GENERATE_TOKEN_FINISH_THREE_DS.equals(step));
     }
 
     @Override
-    public Step resolveExit(StateModel stateModel) {
-
-        Step step = stateModel.getStep();
+    public Step resolveExit(GeneralExitStateModel stateModel) {
+        Step step = stateModel.getGeneralEntryStateModel().getAdapterContext().getStep();
+        Step nextStep = stateModel.getAdapterContext().getStep();
         switch (step) {
             case AUTH_RECURRENT:
-                if (Step.FINISH_THREE_DS.equals(stateModel.getNextStep())) {
+                if (Step.FINISH_THREE_DS.equals(nextStep)) {
                     return Step.GENERATE_TOKEN_FINISH_THREE_DS;
                 } else {
                     return Step.GENERATE_TOKEN_CAPTURE;
@@ -56,7 +56,7 @@ public class DefaultStepResolverImpl implements StepResolver<StateModel> {
             case GENERATE_TOKEN_REFUND:
                 return Step.GENERATE_TOKEN_FINISH;
             default:
-                return stateModel.getNextStep();
+                return nextStep;
         }
     }
 }
