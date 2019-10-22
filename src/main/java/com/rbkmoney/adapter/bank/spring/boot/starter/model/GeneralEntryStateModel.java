@@ -38,6 +38,7 @@ public class GeneralEntryStateModel {
     private String invoiceDetails;
     private String callbackUrl;
 
+    @ToString.Exclude
     private Map<String, String> options;
 
     private AdapterContext adapterContext;
