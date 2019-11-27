@@ -21,9 +21,9 @@ public class ThreeDsPropertiesServiceImpl implements ThreeDsPropertiesService {
     public Map<String, String> initProperties(GeneralExitStateModel generalExitStateModel) {
         Map<String, String> params = new HashMap<>();
         AdapterContext adapterContext = generalExitStateModel.getAdapterContext();
-        params.put(ThreeDsFields.PA_REQ, adapterContext.getPaReq());
-        params.put(ThreeDsFields.MD, adapterContext.getMd());
-        params.put(ThreeDsFields.TERM_URL, RedirectUtils.getCallbackUrl(
+        params.put(ThreeDsFields.PA_REQ.getValue(), adapterContext.getPaReq());
+        params.put(ThreeDsFields.MD.getValue(), adapterContext.getMd());
+        params.put(ThreeDsFields.TERM_URL.getValue(), RedirectUtils.getCallbackUrl(
                 adapterProperties.getCallbackUrl(),
                 adapterProperties.getPathCallbackUrl())
         );

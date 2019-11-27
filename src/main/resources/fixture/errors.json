@@ -1,8 +1,7 @@
 [
   {
-    "code":"unknown",
-    "description":"unknown",
-    "regexp":".*",
-    "mapping":"authorization_failed:unknown"
+    "codeRegex":"002",
+    "descriptionRegex":"Invalid .*",
+    "mapping":"authorization_failed:operation_blocked"
   }
 ]

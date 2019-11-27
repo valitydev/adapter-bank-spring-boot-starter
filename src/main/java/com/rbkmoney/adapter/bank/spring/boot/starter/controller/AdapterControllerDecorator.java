@@ -1,7 +1,8 @@
 package com.rbkmoney.adapter.bank.spring.boot.starter.controller;
 
 import com.rbkmoney.adapter.common.controller.AdapterController;
-import com.rbkmoney.adapter.common.serializer.CallbackSerializer;
+import com.rbkmoney.adapter.common.state.deserializer.CallbackDeserializer;
+import com.rbkmoney.adapter.common.state.serializer.CallbackSerializer;
 import com.rbkmoney.adapter.helpers.hellgate.HellgateAdapterClient;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -12,7 +13,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-/** Handler callback 3DS */
 @Slf4j
 @RestController
 @RequestMapping("/${server.rest.endpoint}")
@@ -20,8 +20,12 @@ public class AdapterControllerDecorator {
 
     private AdapterController adapterController;
 
-    public AdapterControllerDecorator(HellgateAdapterClient hgClient, CallbackSerializer callbackSerializer) {
-        adapterController = new AdapterController(hgClient, callbackSerializer);
+    public AdapterControllerDecorator(
+            HellgateAdapterClient hgClient,
+            CallbackSerializer callbackSerializer,
+            CallbackDeserializer callbackDeserializer
+    ) {
+        adapterController = new AdapterController(hgClient, callbackSerializer, callbackDeserializer);
     }
 
     @PostMapping(value = "term_url")
