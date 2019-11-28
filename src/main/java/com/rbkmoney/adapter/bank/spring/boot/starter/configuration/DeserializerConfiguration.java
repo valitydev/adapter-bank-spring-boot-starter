@@ -3,7 +3,7 @@ package com.rbkmoney.adapter.bank.spring.boot.starter.configuration;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.rbkmoney.adapter.common.state.deserializer.AdapterDeserializer;
 import com.rbkmoney.adapter.common.state.deserializer.CallbackDeserializer;
-import com.rbkmoney.adapter.common.state.deserializer.RecTokenDeserializer;
+import com.rbkmoney.adapter.common.state.deserializer.RecurrentTokenDeserializer;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -23,8 +23,8 @@ public class DeserializerConfiguration {
     }
 
     @Bean
-    public RecTokenDeserializer recTokenDeserializer(ObjectMapper objectMapper) {
-        return new RecTokenDeserializer(objectMapper);
+    public RecurrentTokenDeserializer recTokenDeserializer(ObjectMapper objectMapper) {
+        return new RecurrentTokenDeserializer(objectMapper);
     }
 
 }
