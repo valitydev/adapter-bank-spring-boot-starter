@@ -22,12 +22,12 @@ public class AppConfiguration {
 
     @Bean
     public ErrorMapping errorMapping() throws IOException {
-        return new SimpleErrorMapping(errorMappingFilePath, errorMappingPattern).getErrorMapping();
+        return new SimpleErrorMapping(errorMappingFilePath, errorMappingPattern).createErrorMapping();
     }
 
     @Bean
     public ObjectMapper objectMapper() {
-        return new SimpleObjectMapper().getSimpleObjectMapperFactory();
+        return new SimpleObjectMapper().createSimpleObjectMapperFactory();
     }
 
 
