@@ -27,7 +27,7 @@ public class AppConfiguration {
 
     @Bean
     public ObjectMapper objectMapper() {
-        return new SimpleObjectMapper().getSimpleObjectMapper();
+        return new SimpleObjectMapper().getSimpleObjectMapperFactory();
     }
 
 
