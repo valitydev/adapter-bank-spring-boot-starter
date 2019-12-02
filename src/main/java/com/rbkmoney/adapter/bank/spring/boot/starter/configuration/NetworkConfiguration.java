@@ -1,4 +1,4 @@
-package com.rbkmoney.adapter.bank.spring.boot.starter.config;
+package com.rbkmoney.adapter.bank.spring.boot.starter.configuration;
 
 import com.rbkmoney.adapter.common.component.NetworkFilterComponent;
 import org.apache.catalina.connector.Connector;
@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class NetworkConfig {
+public class NetworkConfiguration {
 
     @Value("${server.rest.port}")
     private int restPort;

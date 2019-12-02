@@ -6,17 +6,17 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.rbkmoney</groupId>
     <artifactId>adapter-bank-spring-boot-starter</artifactId>
-    <version>0.0.8</version>
+    <version>0.0.9</version>
     <packaging>jar</packaging>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>8</java.version>
         <spring-boot.version>2.1.0.RELEASE</spring-boot.version>
-        <damsel-utils.version>2.1.9</damsel-utils.version>
-        <damsel.version>1.256-2afe121</damsel.version>
+        <damsel-utils.version>2.1.10</damsel-utils.version>
+        <damsel.version>1.363-3074af1</damsel.version>
         <serializer.version>0.6.7</serializer.version>
-        <hellgate-adapter-client.version>2.1.9</hellgate-adapter-client.version>
+        <hellgate-adapter-client.version>2.1.10</hellgate-adapter-client.version>
     </properties>
 
     <dependencies>
@@ -69,13 +69,13 @@
         <dependency>
             <groupId>com.rbkmoney</groupId>
             <artifactId>error-mapping-java</artifactId>
-            <version>1.0.0</version>
+            <version>1.0.4</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>com.rbkmoney.woody</groupId>
             <artifactId>woody-thrift</artifactId>
-            <version>1.1.15</version>
+            <version>1.1.16</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -94,7 +94,6 @@
             <artifactId>serializer</artifactId>
             <version>${serializer.version}</version>
         </dependency>
-
         <dependency>
             <groupId>com.rbkmoney.proxy-libs</groupId>
             <artifactId>hellgate-adapter-client</artifactId>
@@ -103,7 +102,7 @@
         <dependency>
             <groupId>com.rbkmoney</groupId>
             <artifactId>adapter-common-lib</artifactId>
-            <version>0.0.9</version>
+            <version>0.0.11</version>
         </dependency>
 
         <!-- test -->
