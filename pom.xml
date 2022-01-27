@@ -39,9 +39,6 @@
     </scm>
 
     <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java.version>8</java.version>
-
         <adapter-client-lib.version>1.0.1</adapter-client-lib.version>
         <adapter-thrift-lib.version>1.0.0</adapter-thrift-lib.version>
         <adapter-common-lib.version>1.0.0</adapter-common-lib.version>
@@ -175,20 +172,4 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-
-    <build>
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.9.0</version>
-                    <configuration>
-                        <source>${java.version}</source>
-                        <target>${java.version}</target>
-                    </configuration>
-                </plugin>
-            </plugins>
-        </pluginManagement>
-    </build>
 </project>
