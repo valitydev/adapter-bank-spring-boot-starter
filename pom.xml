@@ -39,6 +39,10 @@
     </scm>
 
     <properties>
+        <maven.compiler.source>15</maven.compiler.source>
+        <maven.compiler.target>15</maven.compiler.target>
+        <java.version>15</java.version>
+
         <adapter-client-lib.version>1.0.1</adapter-client-lib.version>
         <adapter-thrift-lib.version>1.0.0</adapter-thrift-lib.version>
         <adapter-common-lib.version>1.0.0</adapter-common-lib.version>
