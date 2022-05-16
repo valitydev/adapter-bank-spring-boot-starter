@@ -1,6 +1,6 @@
 package dev.vality.adapter.bank.spring.boot.starter.utils;
 
-import dev.vality.adapter.common.utils.encryption.HmacEncryption;
+import dev.vality.adapter.common.utils.HmacEncryption;
 import org.junit.Assert;
 import org.junit.Test;
 

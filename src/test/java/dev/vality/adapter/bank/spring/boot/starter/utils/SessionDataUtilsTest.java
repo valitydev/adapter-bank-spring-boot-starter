@@ -1,6 +1,6 @@
 package dev.vality.adapter.bank.spring.boot.starter.utils;
 
-import dev.vality.adapter.common.utils.converter.CardDataUtils;
+import dev.vality.adapter.common.utils.CardDataUtils;
 import dev.vality.cds.storage.AuthData;
 import dev.vality.cds.storage.CardSecurityCode;
 import dev.vality.cds.storage.SessionData;

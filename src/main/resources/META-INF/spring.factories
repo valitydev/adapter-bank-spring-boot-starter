@@ -1,7 +1,11 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-dev.vality.adapter.bank.spring.boot.starter.configuration.AppConfiguration,\
-dev.vality.adapter.bank.spring.boot.starter.configuration.SerializerConfiguration,\
-dev.vality.adapter.bank.spring.boot.starter.configuration.DeserializerConfiguration,\
-dev.vality.adapter.bank.spring.boot.starter.controller.AdapterControllerDecorator,\
-dev.vality.adapter.bank.spring.boot.starter.service.ThreeDsPropertiesServiceImpl,\
-dev.vality.adapter.bank.spring.boot.starter.logging.aspect.RequestLoggingAspect
+dev.vality.adapter.bank.spring.boot.starter.configuration.SimpleObjectMapperConfiguration,\
+dev.vality.adapter.bank.spring.boot.starter.configuration.SimpleErrorMappingConfiguration,\
+dev.vality.adapter.bank.spring.boot.starter.configuration.RestTemplateConfig,\
+dev.vality.adapter.bank.spring.boot.starter.configuration.RequestLoggingAspectConfiguration,\
+dev.vality.adapter.bank.spring.boot.starter.configuration.NetworkConfiguration,\
+dev.vality.adapter.bank.spring.boot.starter.configuration.LoggingInterceptorConfiguration,\
+dev.vality.adapter.bank.spring.boot.starter.configuration.HellgateClientConfiguration,\
+dev.vality.adapter.bank.spring.boot.starter.configuration.CdsStorageClientConfiguration,\
+dev.vality.adapter.bank.spring.boot.starter.configuration.CdsIdStorageClientConfiguration,\
+dev.vality.adapter.bank.spring.boot.starter.configuration.BenderConfiguration
