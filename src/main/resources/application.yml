@@ -19,6 +19,18 @@ adapter-bank-spring-boot-starter:
     enabled: true
   bender-client:
     enabled: true
+  adapter:
+    enabled: true
+  timer:
+    enabled: true
+
+adapter:
+  url: http://127.0.0.1
+  callbackUrl: http://127.0.0.1:8080
+  pathCallbackUrl: /${server.rest.endpoint}/term_url
+  pathRecurrentCallbackUrl: /${server.rest.endpoint}/rec_term_url
+  defaultTermUrl: https://checkout.empayre.com/v1/finish-interaction.html
+  tagPrefix: adapter-
 
 bender:
   client:

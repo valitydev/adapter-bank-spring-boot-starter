@@ -8,4 +8,6 @@ dev.vality.adapter.bank.spring.boot.starter.configuration.LoggingInterceptorConf
 dev.vality.adapter.bank.spring.boot.starter.configuration.HellgateClientConfiguration,\
 dev.vality.adapter.bank.spring.boot.starter.configuration.CdsStorageClientConfiguration,\
 dev.vality.adapter.bank.spring.boot.starter.configuration.CdsIdStorageClientConfiguration,\
-dev.vality.adapter.bank.spring.boot.starter.configuration.BenderConfiguration
+dev.vality.adapter.bank.spring.boot.starter.configuration.BenderConfiguration, \
+dev.vality.adapter.bank.spring.boot.starter.configuration.AdapterConfiguration, \
+dev.vality.adapter.bank.spring.boot.starter.configuration.TimerConfiguration
