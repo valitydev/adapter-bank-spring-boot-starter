@@ -10,4 +10,5 @@ dev.vality.adapter.bank.spring.boot.starter.configuration.CdsStorageClientConfig
 dev.vality.adapter.bank.spring.boot.starter.configuration.CdsIdStorageClientConfiguration,\
 dev.vality.adapter.bank.spring.boot.starter.configuration.BenderConfiguration, \
 dev.vality.adapter.bank.spring.boot.starter.configuration.AdapterConfiguration, \
-dev.vality.adapter.bank.spring.boot.starter.configuration.TimerConfiguration
+dev.vality.adapter.bank.spring.boot.starter.configuration.TimerConfiguration, \
+dev.vality.adapter.bank.spring.boot.starter.configuration.SerdeConfig
