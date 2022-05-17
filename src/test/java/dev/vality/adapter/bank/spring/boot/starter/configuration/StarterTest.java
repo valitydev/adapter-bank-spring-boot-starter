@@ -1,7 +1,6 @@
 package dev.vality.adapter.bank.spring.boot.starter.configuration;
 
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.autoconfigure.web.client.AutoConfigureWebClient;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.PropertySource;
 
@@ -42,7 +41,6 @@ import org.springframework.context.annotation.PropertySource;
         dev.vality.adapter.bank.spring.boot.starter.configuration.TemporaryContextServiceConfiguration.class,
         dev.vality.adapter.bank.spring.boot.starter.configuration.ThreeDsAdapterServiceConfiguration.class,
         dev.vality.adapter.bank.spring.boot.starter.configuration.TokenServerFlowHandlerConfiguration.class})
-@AutoConfigureWebClient
 @PropertySource("classpath:application.yml")
 public class StarterTest {
 
