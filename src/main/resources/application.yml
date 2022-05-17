@@ -25,6 +25,8 @@ adapter-bank-spring-boot-starter:
     enabled: true
   serde:
     enabled: true
+  processor:
+    enabled: true
 
 adapter:
   url: http://127.0.0.1
