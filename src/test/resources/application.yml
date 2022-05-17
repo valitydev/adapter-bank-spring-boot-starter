@@ -116,3 +116,12 @@ rest-template:
 error-mapping:
   file: classpath:fixture/errors.json
   patternReason: "'%s' - '%s'" # 'code' - 'description'
+
+server:
+  rest:
+    port: '8083'
+    endpoint: 'endpoint'
+
+spring:
+  main:
+    allow-bean-definition-overriding: true

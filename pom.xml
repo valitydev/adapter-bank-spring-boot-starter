@@ -12,7 +12,7 @@
     </parent>
 
     <artifactId>adapter-bank-spring-boot-starter</artifactId>
-    <version>1.0.0</version>
+    <version>0.0.2</version>
     <packaging>jar</packaging>
     <name>adapter-bank-spring-boot-starter</name>
     <description>Spring boot starter for bank adapter</description>
@@ -48,8 +48,7 @@
         <lombok.version>1.18.24</lombok.version>
         <slf4j-api.version>1.7.36</slf4j-api.version>
         <javax.servlet-api.version>4.0.1</javax.servlet-api.version>
-        <micrometer-registry-prometheus.version>1.8.4</micrometer-registry-prometheus.version>
-        <junit.version>4.12</junit.version>
+        <jackson.version>2.13.2</jackson.version>
     </properties>
 
     <dependencies>
@@ -73,14 +72,22 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>io.micrometer</groupId>
-            <artifactId>micrometer-core</artifactId>
-            <version>${micrometer-registry-prometheus.version}</version>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson.version}</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>io.micrometer</groupId>
-            <artifactId>micrometer-registry-prometheus</artifactId>
-            <version>${micrometer-registry-prometheus.version}</version>
+            <groupId>com.fasterxml.jackson.datatype</groupId>
+            <artifactId>jackson-datatype-jsr310</artifactId>
+            <version>${jackson.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>${jackson.version}</version>
+            <scope>provided</scope>
         </dependency>
 
         <!--spring-->
