@@ -5,6 +5,7 @@ import org.springframework.boot.test.autoconfigure.web.client.AutoConfigureWebCl
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.PropertySource;
 
+@SuppressWarnings({"all"})
 @SpringBootTest(classes = {
         RemoteClientImpl.class,
         Validator.class,
