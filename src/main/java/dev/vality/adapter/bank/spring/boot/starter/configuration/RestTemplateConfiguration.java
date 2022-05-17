@@ -29,7 +29,7 @@ import java.time.Duration;
 @Configuration
 @RequiredArgsConstructor
 @ConditionalOnExpression("${adapter-bank-spring-boot-starter.rest-template.enabled:true}")
-public class RestTemplateConfig {
+public class RestTemplateConfiguration {
 
     @Value("${rest-template.maxTotalPooling}")
     private int maxTotalPooling;

@@ -27,6 +27,44 @@ adapter-bank-spring-boot-starter:
     enabled: true
   processor:
     enabled: true
+  ctxToEntryModelConverter:
+    enabled: true
+  entryModelToBaseRequestModelConverter:
+    enabled: true
+  exitModelToProxyResultConverter:
+    enabled: true
+  exitModelToRecTokenProxyResultConverter:
+    enabled: true
+  exitStateModelToTemporaryContextConverter:
+    enabled: true
+  exponentialBackOffPollingService:
+    enabled: true
+  intentResultFactory:
+    enabled: true
+  paymentCallbackHandler:
+    enabled: true
+  paymentServerFlowHandler:
+    enabled: true
+  recCtxToEntryModelConverter:
+    enabled: true
+  recurrentIntentResultFactory:
+    enabled: true
+  recurrentResultIntentResolver:
+    enabled: true
+  recurrentTokenCallbackHandler:
+    enabled: true
+  resultIntentResolver:
+    enabled: true
+  serverHandlerLogDecorator:
+    enabled: true
+  stepResolver:
+    enabled: true
+  temporaryContextService:
+    enabled: true
+  threeDsAdapterService:
+    enabled: true
+  tokenServerFlowHandler:
+    enabled: true
 
 adapter:
   url: http://127.0.0.1

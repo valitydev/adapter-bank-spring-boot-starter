@@ -1,7 +1,7 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
 dev.vality.adapter.bank.spring.boot.starter.configuration.SimpleObjectMapperConfiguration,\
 dev.vality.adapter.bank.spring.boot.starter.configuration.SimpleErrorMappingConfiguration,\
-dev.vality.adapter.bank.spring.boot.starter.configuration.RestTemplateConfig,\
+dev.vality.adapter.bank.spring.boot.starter.configuration.RestTemplateConfiguration,\
 dev.vality.adapter.bank.spring.boot.starter.configuration.RequestLoggingAspectConfiguration,\
 dev.vality.adapter.bank.spring.boot.starter.configuration.NetworkConfiguration,\
 dev.vality.adapter.bank.spring.boot.starter.configuration.LoggingInterceptorConfiguration,\
@@ -11,5 +11,24 @@ dev.vality.adapter.bank.spring.boot.starter.configuration.CdsIdStorageClientConf
 dev.vality.adapter.bank.spring.boot.starter.configuration.BenderConfiguration, \
 dev.vality.adapter.bank.spring.boot.starter.configuration.AdapterConfiguration, \
 dev.vality.adapter.bank.spring.boot.starter.configuration.TimerConfiguration, \
-dev.vality.adapter.bank.spring.boot.starter.configuration.SerdeConfig, \
-dev.vality.adapter.bank.spring.boot.starter.configuration.ProcessorConfig, \
+dev.vality.adapter.bank.spring.boot.starter.configuration.SerdeConfiguration, \
+dev.vality.adapter.bank.spring.boot.starter.configuration.ProcessorConfiguration, \
+dev.vality.adapter.bank.spring.boot.starter.configuration.CtxToEntryModelConverterConfiguration, \
+dev.vality.adapter.bank.spring.boot.starter.configuration.EntryModelToBaseRequestModelConverterConfiguration, \
+dev.vality.adapter.bank.spring.boot.starter.configuration.ExitModelToProxyResultConverterConfiguration, \
+dev.vality.adapter.bank.spring.boot.starter.configuration.ExitModelToRecTokenProxyResultConverterConfiguration, \
+dev.vality.adapter.bank.spring.boot.starter.configuration.ExitStateModelToTemporaryContextConverterConfiguration, \
+dev.vality.adapter.bank.spring.boot.starter.configuration.ExponentialBackOffPollingServiceConfiguration, \
+dev.vality.adapter.bank.spring.boot.starter.configuration.IntentResultFactoryConfiguration, \
+dev.vality.adapter.bank.spring.boot.starter.configuration.PaymentCallbackHandlerConfiguration, \
+dev.vality.adapter.bank.spring.boot.starter.configuration.PaymentServerFlowHandlerConfiguration, \
+dev.vality.adapter.bank.spring.boot.starter.configuration.RecCtxToEntryModelConverterConfiguration, \
+dev.vality.adapter.bank.spring.boot.starter.configuration.RecurrentIntentResultFactoryConfiguration, \
+dev.vality.adapter.bank.spring.boot.starter.configuration.RecurrentResultIntentResolverConfiguration, \
+dev.vality.adapter.bank.spring.boot.starter.configuration.RecurrentTokenCallbackHandlerConfiguration, \
+dev.vality.adapter.bank.spring.boot.starter.configuration.ResultIntentResolverConfiguration, \
+dev.vality.adapter.bank.spring.boot.starter.configuration.ServerHandlerLogDecoratorConfiguration, \
+dev.vality.adapter.bank.spring.boot.starter.configuration.StepResolverConfiguration, \
+dev.vality.adapter.bank.spring.boot.starter.configuration.TemporaryContextServiceConfiguration, \
+dev.vality.adapter.bank.spring.boot.starter.configuration.ThreeDsAdapterServiceConfiguration, \
+dev.vality.adapter.bank.spring.boot.starter.configuration.TokenServerFlowHandlerConfiguration

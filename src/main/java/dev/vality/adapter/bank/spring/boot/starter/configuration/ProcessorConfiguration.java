@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @ConditionalOnExpression("${adapter-bank-spring-boot-starter.processor.enabled:true}")
-public class ProcessorConfig {
+public class ProcessorConfiguration {
 
     @Bean
     public Processor<ExitStateModel, BaseResponseModel, EntryStateModel> baseProcessor() {
@@ -19,5 +19,4 @@ public class ProcessorConfig {
         RedirectProcessor redirectProcessor = new RedirectProcessor(baseProcessor);
         return new RetryProcessor(redirectProcessor);
     }
-
 }

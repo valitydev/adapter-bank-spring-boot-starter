@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @ConditionalOnExpression("${adapter-bank-spring-boot-starter.serde.enabled:true}")
-public class SerdeConfig {
+public class SerdeConfiguration {
 
     @Bean
     public TemporaryContextDeserializer adapterDeserializer(ObjectMapper objectMapper) {
