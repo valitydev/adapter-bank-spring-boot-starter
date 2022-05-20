@@ -7,12 +7,10 @@ import dev.vality.adapter.flow.lib.service.RecurrentIntentResultFactory;
 import dev.vality.adapter.flow.lib.service.TagManagementService;
 import dev.vality.adapter.flow.lib.utils.CallbackUrlExtractor;
 import dev.vality.adapter.flow.lib.utils.TimerProperties;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnExpression;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ConditionalOnExpression("${adapter-bank-spring-boot-starter.recurrentIntentResultFactory.enabled:true}")
 public class RecurrentIntentResultFactoryConfiguration {
 
     @Bean

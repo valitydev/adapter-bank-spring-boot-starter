@@ -5,7 +5,6 @@ import dev.vality.adapter.common.bender.BenderClient;
 import dev.vality.adapter.flow.lib.service.IdGenerator;
 import dev.vality.bender.BenderSrv;
 import dev.vality.woody.thrift.impl.http.THSpawnClientBuilder;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnExpression;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -14,7 +13,6 @@ import java.io.IOException;
 
 @Configuration
 @EnableConfigurationProperties({BenderClientProperties.class})
-@ConditionalOnExpression("${adapter-bank-spring-boot-starter.bender-client.enabled:true}")
 public class BenderConfiguration {
 
     @Bean

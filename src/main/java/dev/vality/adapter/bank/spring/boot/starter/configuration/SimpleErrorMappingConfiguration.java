@@ -3,7 +3,6 @@ package dev.vality.adapter.bank.spring.boot.starter.configuration;
 import dev.vality.adapter.common.component.SimpleErrorMapping;
 import dev.vality.adapter.common.mapper.ErrorMapping;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnExpression;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.Resource;
@@ -11,7 +10,6 @@ import org.springframework.core.io.Resource;
 import java.io.IOException;
 
 @Configuration
-@ConditionalOnExpression("${adapter-bank-spring-boot-starter.error-mapping.enabled:true}")
 public class SimpleErrorMappingConfiguration {
 
     @Value("${error-mapping.file}")

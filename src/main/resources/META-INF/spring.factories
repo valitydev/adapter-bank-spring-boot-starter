@@ -28,7 +28,6 @@ dev.vality.adapter.bank.spring.boot.starter.configuration.RecurrentResultIntentR
 dev.vality.adapter.bank.spring.boot.starter.configuration.RecurrentTokenCallbackHandlerConfiguration, \
 dev.vality.adapter.bank.spring.boot.starter.configuration.ResultIntentResolverConfiguration, \
 dev.vality.adapter.bank.spring.boot.starter.configuration.ServerHandlerLogDecoratorConfiguration, \
-dev.vality.adapter.bank.spring.boot.starter.configuration.StepResolverConfiguration, \
 dev.vality.adapter.bank.spring.boot.starter.configuration.TemporaryContextServiceConfiguration, \
 dev.vality.adapter.bank.spring.boot.starter.configuration.ThreeDsAdapterServiceConfiguration, \
 dev.vality.adapter.bank.spring.boot.starter.configuration.TokenServerFlowHandlerConfiguration

@@ -4,7 +4,6 @@ import dev.vality.adapter.bank.spring.boot.starter.configuration.properties.CdsS
 import dev.vality.adapter.common.cds.CdsStorageClient;
 import dev.vality.cds.storage.StorageSrv;
 import dev.vality.woody.thrift.impl.http.THSpawnClientBuilder;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnExpression;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,7 +12,6 @@ import java.io.IOException;
 
 @Configuration
 @EnableConfigurationProperties({CdsStorageClientProperties.class})
-@ConditionalOnExpression("${adapter-bank-spring-boot-starter.cds-storage-client.enabled:true}")
 public class CdsStorageClientConfiguration {
 
     @Bean

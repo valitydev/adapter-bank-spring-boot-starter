@@ -9,7 +9,6 @@ import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
 import org.apache.http.ssl.SSLContextBuilder;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.actuate.metrics.web.client.MetricsRestTemplateCustomizer;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnExpression;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -28,7 +27,6 @@ import java.time.Duration;
 
 @Configuration
 @RequiredArgsConstructor
-@ConditionalOnExpression("${adapter-bank-spring-boot-starter.rest-template.enabled:true}")
 public class RestTemplateConfiguration {
 
     @Value("${rest-template.maxTotalPooling}")

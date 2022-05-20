@@ -3,7 +3,6 @@ package dev.vality.adapter.bank.spring.boot.starter.configuration;
 import dev.vality.adapter.common.component.NetworkFilterComponent;
 import org.apache.catalina.connector.Connector;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnExpression;
 import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.boot.web.servlet.server.ServletWebServerFactory;
@@ -11,7 +10,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ConditionalOnExpression("${adapter-bank-spring-boot-starter.network.enabled:true}")
 public class NetworkConfiguration {
 
     @Value("${server.rest.port}")

@@ -7,12 +7,10 @@ import dev.vality.adapter.flow.lib.handler.callback.PaymentCallbackHandler;
 import dev.vality.adapter.flow.lib.handler.callback.RecurrentTokenCallbackHandler;
 import dev.vality.adapter.flow.lib.validator.AdapterConfigurationValidator;
 import dev.vality.damsel.proxy_provider.*;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnExpression;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ConditionalOnExpression("${adapter-bank-spring-boot-starter.serverHandlerLogDecorator.enabled:true}")
 public class ServerHandlerLogDecoratorConfiguration {
 
     @Bean

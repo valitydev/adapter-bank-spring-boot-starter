@@ -8,6 +8,7 @@ import org.springframework.context.annotation.PropertySource;
 @SpringBootTest(classes = {
         RemoteClientImpl.class,
         Validator.class,
+        StepResolver.class,
         dev.vality.adapter.bank.spring.boot.starter.configuration.SimpleObjectMapperConfiguration.class,
         dev.vality.adapter.bank.spring.boot.starter.configuration.SimpleErrorMappingConfiguration.class,
 //        dev.vality.adapter.bank.spring.boot.starter.configuration.RestTemplateConfiguration.class,
@@ -37,7 +38,6 @@ import org.springframework.context.annotation.PropertySource;
         dev.vality.adapter.bank.spring.boot.starter.configuration.RecurrentTokenCallbackHandlerConfiguration.class,
         dev.vality.adapter.bank.spring.boot.starter.configuration.ResultIntentResolverConfiguration.class,
         dev.vality.adapter.bank.spring.boot.starter.configuration.ServerHandlerLogDecoratorConfiguration.class,
-        dev.vality.adapter.bank.spring.boot.starter.configuration.StepResolverConfiguration.class,
         dev.vality.adapter.bank.spring.boot.starter.configuration.TemporaryContextServiceConfiguration.class,
         dev.vality.adapter.bank.spring.boot.starter.configuration.ThreeDsAdapterServiceConfiguration.class,
         dev.vality.adapter.bank.spring.boot.starter.configuration.TokenServerFlowHandlerConfiguration.class})
