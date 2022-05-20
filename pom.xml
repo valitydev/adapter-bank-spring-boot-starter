@@ -12,7 +12,7 @@
     </parent>
 
     <artifactId>adapter-bank-spring-boot-starter</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.2</version>
     <packaging>jar</packaging>
     <name>adapter-bank-spring-boot-starter</name>
     <description>Spring boot starter for bank adapter</description>
@@ -39,26 +39,16 @@
     </scm>
 
     <properties>
-        <maven.compiler.source>15</maven.compiler.source>
-        <maven.compiler.target>15</maven.compiler.target>
-        <java.version>15</java.version>
-
-        <adapter-client-lib.version>1.0.1</adapter-client-lib.version>
-        <adapter-thrift-lib.version>1.0.0</adapter-thrift-lib.version>
-        <adapter-common-lib.version>1.0.0</adapter-common-lib.version>
-
-        <damsel.version>1.544-dcd92dd</damsel.version>
+        <spring-boot.version>2.6.7</spring-boot.version>
+        <damsel.version>1.563-d384c12</damsel.version>
         <cds-proto.version>1.66-01353ce</cds-proto.version>
-
-        <spring-boot.version>2.6.3</spring-boot.version>
         <woody.version>1.0.4</woody.version>
         <geck.version>0.0.1</geck.version>
-        <lombok.version>1.18.22</lombok.version>
-        <slf4j-api.version>1.7.30</slf4j-api.version>
+        <lombok.version>1.18.24</lombok.version>
+        <slf4j-api.version>1.7.36</slf4j-api.version>
         <javax.servlet-api.version>4.0.1</javax.servlet-api.version>
-        <hibernate-validator.version>6.1.5.Final</hibernate-validator.version>
-        <error-mapping-java.version>1.0.0</error-mapping-java.version>
-        <junit.version>4.12</junit.version>
+        <jackson.version>2.13.2</jackson.version>
+        <adapter-flow-lib.version>0.1.5</adapter-flow-lib.version>
     </properties>
 
     <dependencies>
@@ -82,9 +72,22 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>org.hibernate.validator</groupId>
-            <artifactId>hibernate-validator</artifactId>
-            <version>${hibernate-validator.version}</version>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.datatype</groupId>
+            <artifactId>jackson-datatype-jsr310</artifactId>
+            <version>${jackson.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>${jackson.version}</version>
+            <scope>provided</scope>
         </dependency>
 
         <!--spring-->
@@ -109,21 +112,30 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
             <version>${spring-boot.version}</version>
-            <scope>provided</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.hibernate</groupId>
+                    <artifactId>hibernate-validator</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-aop</artifactId>
             <version>${spring-boot.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+            <version>${spring-boot.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+            <version>${spring-boot.version}</version>
+        </dependency>
 
         <!--vality-->
-        <dependency>
-            <groupId>dev.vality</groupId>
-            <artifactId>error-mapping-java</artifactId>
-            <version>${error-mapping-java.version}</version>
-            <scope>provided</scope>
-        </dependency>
         <dependency>
             <groupId>dev.vality.woody</groupId>
             <artifactId>woody-thrift</artifactId>
@@ -143,14 +155,10 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>dev.vality.adapter-thrift-lib</groupId>
-            <artifactId>cds-utils</artifactId>
-            <version>${adapter-thrift-lib.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>dev.vality.adapter-thrift-lib</groupId>
-            <artifactId>damsel-utils</artifactId>
-            <version>${adapter-thrift-lib.version}</version>
+            <groupId>dev.vality</groupId>
+            <artifactId>bender-proto</artifactId>
+            <version>1.20-be9cdeb</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>dev.vality.geck</groupId>
@@ -158,22 +166,26 @@
             <version>${geck.version}</version>
         </dependency>
         <dependency>
-            <groupId>dev.vality.adapter-client-lib</groupId>
-            <artifactId>hellgate-adapter-client</artifactId>
-            <version>${adapter-client-lib.version}</version>
-        </dependency>
-        <dependency>
             <groupId>dev.vality</groupId>
-            <artifactId>adapter-common-lib</artifactId>
-            <version>${adapter-common-lib.version}</version>
+            <artifactId>adapter-flow-lib</artifactId>
+            <version>${adapter-flow-lib.version}</version>
         </dependency>
 
         <!-- test -->
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>${junit.version}</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <version>${spring-boot.version}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.22.2</version>
+            </plugin>
+        </plugins>
+    </build>
 </project>
