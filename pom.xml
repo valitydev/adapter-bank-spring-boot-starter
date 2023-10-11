@@ -7,12 +7,12 @@
     <parent>
         <groupId>dev.vality</groupId>
         <artifactId>library-parent-pom</artifactId>
-        <version>1.0.2</version>
+        <version>1.0.3</version>
         <relativePath/>
     </parent>
 
     <artifactId>adapter-bank-spring-boot-starter</artifactId>
-    <version>0.0.2</version>
+    <version>0.0.3</version>
     <packaging>jar</packaging>
     <name>adapter-bank-spring-boot-starter</name>
     <description>Spring boot starter for bank adapter</description>
@@ -39,16 +39,16 @@
     </scm>
 
     <properties>
-        <spring-boot.version>2.6.7</spring-boot.version>
-        <damsel.version>1.563-d384c12</damsel.version>
-        <cds-proto.version>1.66-01353ce</cds-proto.version>
-        <woody.version>1.0.4</woody.version>
+        <spring-boot.version>2.7.16</spring-boot.version>
+        <damsel.version>1.606-f718741</damsel.version>
+        <cds-proto.version>1.70-5227377</cds-proto.version>
+        <woody.version>1.0.5</woody.version>
         <geck.version>0.0.1</geck.version>
-        <lombok.version>1.18.24</lombok.version>
+        <lombok.version>1.18.30</lombok.version>
         <slf4j-api.version>1.7.36</slf4j-api.version>
         <javax.servlet-api.version>4.0.1</javax.servlet-api.version>
-        <jackson.version>2.13.2</jackson.version>
-        <adapter-flow-lib.version>0.1.5</adapter-flow-lib.version>
+        <jackson.version>2.15.2</jackson.version>
+        <adapter-flow-lib.version>0.2.1</adapter-flow-lib.version>
     </properties>
 
     <dependencies>
@@ -157,7 +157,7 @@
         <dependency>
             <groupId>dev.vality</groupId>
             <artifactId>bender-proto</artifactId>
-            <version>1.20-be9cdeb</version>
+            <version>1.25-71c5687</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
