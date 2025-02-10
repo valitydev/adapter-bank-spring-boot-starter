@@ -39,7 +39,7 @@
     </scm>
 
     <properties>
-        <spring-boot.version>2.6.7</spring-boot.version>
+        <spring-boot.version>2.6.15</spring-boot.version>
         <damsel.version>1.563-d384c12</damsel.version>
         <cds-proto.version>1.66-01353ce</cds-proto.version>
         <woody.version>1.0.4</woody.version>
