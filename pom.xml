@@ -12,7 +12,7 @@
     </parent>
 
     <artifactId>adapter-bank-spring-boot-starter</artifactId>
-    <version>0.0.2</version>
+    <version>0.0.3</version>
     <packaging>jar</packaging>
     <name>adapter-bank-spring-boot-starter</name>
     <description>Spring boot starter for bank adapter</description>
@@ -41,7 +41,7 @@
     <properties>
         <spring-boot.version>2.6.7</spring-boot.version>
         <damsel.version>1.563-d384c12</damsel.version>
-        <cds-proto.version>1.66-01353ce</cds-proto.version>
+        <cds-proto.version>1.70-5227377</cds-proto.version>
         <woody.version>1.0.4</woody.version>
         <geck.version>0.0.1</geck.version>
         <lombok.version>1.18.24</lombok.version>
